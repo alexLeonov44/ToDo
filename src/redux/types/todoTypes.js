@@ -1,0 +1,2 @@
+export const ADD_TODO_CARD = 'TODO/ADD_TODO_CARD'
+export const REMOVE_TODO_CARD = 'TODO/REMOVE_TODO_CARD'

@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from 'react-redux';
+import Card from './components/Card';
+import Input from './components/Input';
+import './css/todo.css';
 
-function App() {
+function TodoApp() {
+ 
+  const { todos } = useSelector(({ todo }) => todo);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="todo">
+      <div className="todo__cards-block">
+        {todos.map((todo) => (
+          <Card todoText={todo.todoText} id={todo.id} />
+        ))}
+      </div>
+      <div className="todo__input-block">
+        <Input />
+      </div>
     </div>
   );
 }
 
-export default App;
+export default TodoApp;

@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 10px;
+  height: 140px;
+  border: 1px solid #c7c7c9;
+  border-radius: 10px;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+.card__left-side {
+  width: 370px;
+  margin-right: 10px;
+}
+@media (max-width: 510px) {
+  .card__left-side {
+    width: 80%;
+  }
+}
+.card__left-side span {
+  word-wrap: break-word;
+}
+
+.card__right-side{
+  width: 50px;
+}
+
+.card__close-btn {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.card__close-btn img {
+  opacity: 0.5;
+}
+.card__close-btn img:hover {
+  opacity: 0.7;
+}
+.card__close-btn img:active {
+  opacity: 1;
+}
