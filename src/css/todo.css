@@ -33,7 +33,7 @@
 
 @media (max-width: 510px) {
   .todo__cards-block {
-    height: 87vh;
+    height: 80vh;
   }
 }
 /* .todo__input-block {
