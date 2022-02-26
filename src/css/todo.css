@@ -18,7 +18,7 @@
 .todo__cards-block {
   overflow-y: auto;
   height: 540px;
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 .todo__cards-block::-webkit-scrollbar {
@@ -34,7 +34,7 @@
 
 @media (max-width: 510px) {
   .todo__cards-block {
-    height: 85vh;
+    height: 83vh;
   }
 }
 /* .todo__input-block {
