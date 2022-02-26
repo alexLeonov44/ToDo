@@ -4,7 +4,11 @@ import { getWeatherData } from './api/api';
 import Card from './components/Card';
 import Input from './components/Input';
 import './css/todo.css';
-import { setDataWeatherError, setIsFetchingWeatherData, setWeatherData } from './redux/actions/todoActions';
+import {
+  setDataWeatherError,
+  setIsFetchingWeatherData,
+  setWeatherData,
+} from './redux/actions/todoActions';
 
 function TodoApp() {
   const dispatch = useDispatch();
@@ -14,7 +18,7 @@ function TodoApp() {
     dispatch(setIsFetchingWeatherData(true));
     getWeatherData()
       .then((data) => dispatch(setWeatherData(data)))
-      .catch(err =>dispatch(setDataWeatherError(err)))
+      .catch((err) => dispatch(setDataWeatherError(err)))
       .finally(() => dispatch(setIsFetchingWeatherData(false)));
   };
 
@@ -30,7 +34,13 @@ function TodoApp() {
     <div className="todo">
       <div className="todo__cards-block">
         {todos.map((todo) => (
-          <Card key={todo.id} todoText={todo.todoText} id={todo.id} date={todo.date} weather={todo.weather} />
+          <Card
+            key={todo.id}
+            todoText={todo.todoText}
+            id={todo.id}
+            date={todo.date}
+            weather={todo.weather}
+          />
         ))}
       </div>
       <div className="todo__input-block">
