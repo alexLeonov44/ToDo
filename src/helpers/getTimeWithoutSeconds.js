@@ -1,4 +1,7 @@
 export const getTimeWithoutSeconds = () => {
   let today = new Date();
-  return today.getHours() + ':' + today.getMinutes();
+  let hours = today.getHours()
+  let minutes = today.getMinutes()
+  console.log(String(minutes).length)
+  return `${hours} : ${String(minutes).length === 1 ? '0' + minutes : minutes}`;
 };
