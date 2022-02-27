@@ -6,10 +6,13 @@ import TodoInputContainer from './components/TodoInputContainer';
 import TodoEmptyMessage from './components/TodoEmptyMessage';
 import './css/todo.css';
 import {
+  addNotes,
+  addTodo,
   setDataWeatherError,
   setIsFetchingWeatherData,
   setWeatherData,
 } from './redux/actions/todoActions';
+import { setNotesInLocalStorage } from './helpers/setNotesInLocalStorage';
 
 function TodoApp() {
   const dispatch = useDispatch();
@@ -24,6 +27,7 @@ function TodoApp() {
   };
 
   useEffect(() => {
+    getNotesFromLocalStorage();
     getWeatherDataHandler();
     const interval = setInterval(() => {
       getWeatherDataHandler();
@@ -31,10 +35,25 @@ function TodoApp() {
 
     return () => clearTimeout(interval);
   }, []);
+
+  useEffect(() => {
+
+    if (todos.length) {
+      setNotesInLocalStorage(todos);
+    }
+  }, [todos]);
+
+  const getNotesFromLocalStorage = () => {
+    const notes = JSON.parse(localStorage.getItem('duckNote'));
+    if (Array.isArray(notes) && notes.length) {
+      dispatch(addNotes(notes));
+    }
+  };
+
   return (
     <div className="todo">
       <div className="todo__cards-block">
-        {!todos.length && <TodoEmptyMessage/>}
+        {!todos.length && <TodoEmptyMessage />}
         {todos.map((todo) => (
           <Card
             key={todo.id}

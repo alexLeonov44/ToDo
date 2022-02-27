@@ -1,4 +1,11 @@
-import { ADD_TODO_CARD, REMOVE_TODO_CARD, SET_WEATHER_DATA ,SET_DATA_WEATHER_ERROR, SET_IS_FETCHING_WEATHER_DATA } from '../types/todoTypes';
+import {
+  ADD_TODO_CARD,
+  REMOVE_TODO_CARD,
+  SET_WEATHER_DATA,
+  SET_DATA_WEATHER_ERROR,
+  SET_IS_FETCHING_WEATHER_DATA,
+  ADD_NOTES,
+} from '../types/todoTypes';
 
 const initialState = {
   todos: [],
@@ -14,6 +21,11 @@ export default function todoReducer(state = initialState, action) {
         ...state,
         todos: [...state.todos, action.todo],
       };
+    case ADD_NOTES:
+      return {
+        ...state,
+        todos:action.notes,
+      };
     case REMOVE_TODO_CARD:
       return {
         ...state,
@@ -23,7 +35,7 @@ export default function todoReducer(state = initialState, action) {
       return {
         ...state,
         weatherData: { ...action.payload },
-        weatherErrorData:null
+        weatherErrorData: null,
       };
     case SET_IS_FETCHING_WEATHER_DATA:
       return {

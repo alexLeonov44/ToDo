@@ -1,9 +1,15 @@
-import { ADD_TODO_CARD, REMOVE_TODO_CARD, SET_DATA_WEATHER_ERROR, SET_IS_FETCHING_WEATHER_DATA, SET_WEATHER_DATA } from "../types/todoTypes";
+import { ADD_NOTES, ADD_TODO_CARD, REMOVE_TODO_CARD, SET_DATA_WEATHER_ERROR, SET_IS_FETCHING_WEATHER_DATA, SET_WEATHER_DATA } from "../types/todoTypes";
 
   export const addTodo = (todo) => {
     return {
       type:ADD_TODO_CARD,
       todo,
+    };
+  };
+  export const addNotes = (notes) => {
+    return {
+      type:ADD_NOTES,
+      notes,
     };
   };
   export const removeTodo = (id) => {
