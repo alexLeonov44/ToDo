@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getWeatherData } from './api/api';
 import Card from './components/Card';
 import Input from './components/Input';
+import TodoEmptyMessage from './components/TodoEmptyMessage';
 import './css/todo.css';
 import {
   setDataWeatherError,
@@ -33,6 +34,7 @@ function TodoApp() {
   return (
     <div className="todo">
       <div className="todo__cards-block">
+        {!todos.length && <TodoEmptyMessage/>}
         {todos.map((todo) => (
           <Card
             key={todo.id}

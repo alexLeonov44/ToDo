@@ -22,7 +22,7 @@ export default function Card({ todoText, id, date ,weather }) {
 
       <div className="card__right-side">
         <div className="card__right-side__weather-img" ><img src={`http://openweathermap.org/img/wn/${weather?.icon}@2x.png`} alt='weather img'/></div>
-        <div className="card__right-side__weather">{temperatureDataHandler(weather?.temp)} C</div>
+        <div className="card__right-side__weather">{temperatureDataHandler(weather?.temp)} C</div> 
         <div className="card__right-side__date">
           <div>
             <time dateTime={date.DMY}>{date.DMY}</time>

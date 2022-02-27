@@ -48,12 +48,12 @@ export default function Input() {
     <div className="input-block">
       <span style={{ marginRight: 20 }}>Add note...</span>
       <img
-        style={{ width: 30, visibility: !isFetchingWeatherData ? 'visible' : 'hidden' }}
+        style={{ width: 30, visibility: isFetchingWeatherData ? 'visible' : 'hidden' }}
         src={loader}
         alt="loader.."
       />
       <span style={{marginLeft:20,color:'red'}}>{validationError}</span>
-      <input style={{borderColor:validationError && 'red'}} onChange={inputHandler} value={inputText} onKeyDown={handleKeyDown} />
+      <input style={{borderColor:validationError && 'red'}} disabled={isFetchingWeatherData} onChange={inputHandler} value={inputText} onKeyDown={handleKeyDown} />
     </div>
   );
 }

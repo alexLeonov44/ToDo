@@ -15,7 +15,7 @@
 }
 @media (max-width: 510px) {
   .card__left-side {
-    width: 80%;
+    width: 70%;
   }
 }
 .card__left-side span {
