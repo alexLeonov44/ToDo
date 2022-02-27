@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getWeatherData } from './api/api';
 import Card from './components/Card';
-import Input from './components/Input';
+import TodoInputContainer from './components/TodoInputContainer';
 import TodoEmptyMessage from './components/TodoEmptyMessage';
 import './css/todo.css';
 import {
@@ -46,7 +46,7 @@ function TodoApp() {
         ))}
       </div>
       <div className="todo__input-block">
-        <Input />
+        <TodoInputContainer />
       </div>
     </div>
   );
