@@ -37,8 +37,7 @@ function TodoApp() {
   }, []);
 
   useEffect(() => {
-
-    if (todos.length) {
+    if (Array.isArray(todos)) {
       setNotesInLocalStorage(todos);
     }
   }, [todos]);
